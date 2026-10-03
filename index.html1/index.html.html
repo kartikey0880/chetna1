@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Chetna ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#160b19,#351426,#1b1024);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.container{
+  width:92%;
+  max-width:600px;
+  text-align:center;
+  padding:30px;
+}
+
+.card{
+  background:rgba(255,255,255,0.09);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  border-radius:28px;
+  padding:35px 25px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  animation:fadeIn 1s ease;
+}
+
+h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:#ffc9da;
+  font-size:17px;
+  margin-bottom:30px;
+  line-height:1.6;
+}
+
+button{
+  border:none;
+  padding:13px 20px;
+  margin:7px;
+  border-radius:30px;
+  background:#ff6f9c;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:0 8px 20px rgba(255,70,130,.2);
+}
+
+button:hover{
+  transform:translateY(-3px) scale(1.03);
+  background:#ff4f89;
+}
+
+.message{
+  margin-top:25px;
+  padding:20px;
+  background:rgba(255,255,255,.08);
+  border-radius:20px;
+  line-height:1.7;
+  color:#ffe4ed;
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hidden{
+  display:none;
+}
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  animation:float 6s linear forwards;
+  pointer-events:none;
+}
+
+.final{
+  margin-top:25px;
+  font-size:18px;
+  line-height:1.8;
+  color:#ffd8e5;
+}
+
+.signature{
+  margin-top:20px;
+  font-size:14px;
+  color:#ffabc6;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes float{
+  from{
+    transform:translateY(0) rotate(0deg);
+    opacity:1;
+  }
+  to{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="card">
+
+    <div id="main">
+
+      <div style="font-size:50px;">🌷</div>
+
+      <h1>Hey Chetna ❤️</h1>
+
+      <p class="subtitle">
+        I know today isn't exactly your favourite day...
+        <br>
+        so I made you a tiny little corner of the internet. 🫂
+      </p>
+
+      <button onclick="start()">Enter your comfort zone 🫶🏻</button>
+
+    </div>
+
+
+    <div id="comfort" class="hidden">
+
+      <h1 style="font-size:32px;">Chetna's Comfort Zone 🎀</h1>
+
+      <p class="subtitle">
+        You don't have to be okay all the time.
+        Just choose what you need right now.
+      </p>
+
+      <button onclick="showMessage('hug')">🫂 I need a hug</button>
+
+      <button onclick="showMessage('rant')">😤 I need to rant</button>
+
+      <button onclick="showMessage('distract')">😂 Distract me</button>
+
+      <button onclick="showMessage('love')">❤️ Remind me</button>
+
+      <div id="message" class="message">
+        Choose one, cutie...
+      </div>
+
+      <button onclick="finalMessage()" style="margin-top:20px;">
+        💌 One last thing...
+      </button>
+
+    </div>
+
+
+    <div id="final" class="hidden">
+
+      <div style="font-size:55px;">🫂</div>
+
+      <h1 style="font-size:34px;">
+        For You, Chetna ❤️
+      </h1>
+
+      <p class="final">
+        You don't need to hide your pain from me.
+        <br><br>
+
+        If today feels difficult, take it slow.
+        Rest. Stay warm. Eat something you like.
+        And don't feel bad about being a little extra today. 🥺
+        <br><br>
+
+        You deserve patience, care and all the soft things
+        in the world.
+        <br><br>
+
+        And if you need someone...
+        <b>I'm right here. Always. ❤️</b>
+      </p>
+
+      <div class="signature">
+        — Your personal idiot 🫶🏻
+      </div>
+
+      <button onclick="createHearts()" style="margin-top:25px;">
+        🩷 Send me a virtual hug
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+function start(){
+
+  document.getElementById("main").classList.add("hidden");
+  document.getElementById("comfort").classList.remove("hidden");
+
+  createHearts();
+}
+
+
+function showMessage(type){
+
+  let message="";
+
+  if(type==="hug"){
+    message=
+    "Come here 🫂❤️ No explanations needed. Just a very long, warm hug. You can stay here as long as you want.";
+  }
+
+  if(type==="rant"){
+    message=
+    "Go ahead. Rant. Complain. Be angry. Say whatever you want. 😂❤️ I'll listen without judging you.";
+  }
+
+  if(type==="distract"){
+    message=
+    "Official distraction protocol activated. 😭😂 Your only responsibility right now is to smile at least once. Deal?";
+  }
+
+  if(type==="love"){
+    message=
+    "Just a reminder: one uncomfortable day doesn't change how precious you are. You're still my favourite person to annoy. ❤️";
+  }
+
+  document.getElementById("message").innerHTML=message;
+
+  createHearts();
+}
+
+
+function finalMessage(){
+
+  document.getElementById("comfort").classList.add("hidden");
+  document.getElementById("final").classList.remove("hidden");
+
+  createHearts();
+  setInterval(createHearts,1800);
+}
+
+
+function createHearts(){
+
+  for(let i=0;i<8;i++){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML=["❤️","🩷","💕","💗","🌷"][Math.floor(Math.random()*5)];
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(15+Math.random()*25)+"px";
+    heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+      heart.remove();
+    },8000);
+  }
+}
+
+</script>
+
+</body>
+</html>
